@@ -1,0 +1,186 @@
+ <b-button v-b-modal.modal-prevent-closing>Open Modal</b-button>
+            <b-modal id="modal-prevent-closing" ref="modal" title="Submit Your Name">
+              
+                <div>
+
+                    <form ref="form" @submit.stop.prevent="handleSubmit">
+
+                        <p> Student Name: </p><input v-model="record.name" required/>
+
+                        <p> Fee: </p><input v-model="record.amount" required/>
+
+                        <p> Date of joining: </p><input v-model="record.joindate" required/>
+
+                        <p> Total Classes: </p> <input v-model="record.totalclasses" required/>
+
+
+                    </form>
+                    
+                </div>             
+              
+
+            
+             
+            </b-modal>
+
+
+
+
+
+
+
+                        <b-modal id="modal-prevent-closing" ref="modal" title="Submit Your Name" @show="resetModal"  @hidden="resetModal" @ok="handleOk">
+                
+                <form id="app" @submit="checkform" method="post">
+
+                    <p v-if="errors.length">
+                        <b>Please correct the following error(s):</b>
+                        <ul>
+                        <li v-for="error in errors">{{ error }}</li>
+                        </ul>
+                    </p>
+
+                    <label for="record.name">Name: </label>
+                    <input v-model="record.name" required/>
+
+
+                </form>
+                
+                
+                
+            </b-modal>
+
+
+
+
+
+                            <form id="app" @submit="checkform" method="post">
+
+                    <p v-if="errors.length">
+                        <b>Please correct the following error(s):</b>
+                        <ul>
+                        <li v-for="error in errors">{{ error }}</li>
+                        </ul>
+                    </p>
+
+
+
+
+
+                    <label for="record.name" ref="input"  required/>Name: </label>
+                    <input v-model="record.name" required/>
+
+
+
+
+
+
+
+
+
+
+
+<b-button v-b-modal.modal-prevent-closing>Open Modal</b-button>
+        
+            <b-modal id="modal-prevent-closing" ref="modal" title="Details"  hide-footer>
+                
+
+
+
+                    <form method="post"  @submit.stop.prevent="FormSubmit" ref="form" action="JavaScript:void(0)">
+
+
+                        <div class="addContainer">
+                            <div class="adItems">
+                                <label for="record.name">Name: </label>
+                                <input v-model="record.name" required/>
+                            </div>
+
+                            <div class="adItems">
+                                <label for="record.amount">Fee: </label>
+                                <input v-model="record.amount" required/>
+                            </div>
+
+                            <div class="adItems">
+                                <label for="record.joindate">joindate: </label>
+                                <input v-model="record.joindate" required/>
+                            </div>
+                            
+                            <div class="adItems">
+                                <label for="record.totalClasses">totalClasses: </label>
+                                <input v-model="record.totalClasses" required/>
+                            </div>
+                        </div>
+
+                        
+                        <input class="isubmit"type="submit"></input>
+
+                    </form>
+                
+                
+                
+            </b-modal>
+
+
+
+
+                                <b-modal id="edit-modal">
+
+                                <form method="post"   @action="JavaScript:void(0)">
+
+
+                                    <div class="addContainer">
+                                        <div class="adItems">
+                                            <label>Name: </label>
+                                            <input value="sreeram" required/>
+                
+                                            <p>{{ studentsList[new_entry]['name'] }}</p>
+                                            <p>test1 {{ new_entry }}</p>
+                                        </div>
+            
+                                    </div>
+        
+                                
+                                    <input class="isubmit"type="submit"></input>
+        
+                            </form>
+
+                                </b-modal>
+
+
+
+
+                        <div class="detail">
+                            <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Modify</th>
+                                </tr>
+                            </thead>
+
+                                <tr v-for="data,index in studentsList" v-if="searchList == ''">
+                                    <td>
+                                        <p>
+                                            <b-button v-b-modal.edit-modal @click="edit_details(data)" >Edit {{ data['name'] }}{{ index }}</b-button>
+                                            <b-modal id="edit-modal" v-if="data['name'] === new_entry">
+                                                    <p>Hello {{ new_entry }}</p>
+                                            </b-modal>
+
+                                        </p>
+                                    </td>
+                                </tr>
+
+
+
+                            </table>
+                        </div>
+
+                                    <tr v-for="data,index in studentsList" v-if="studentsList[index]['name'] == searchList">
+                                        <td v-for="keys,values in studentHeader"><p>{{ data[values] }}</p></td>
+                                    </tr>
+
+                                    <tr v-for="data,index in studentsList" v-if="searchList == ''">
+                                        <td v-for="keys,values in studentHeader">
+                                            <p>{{ data[values] }}</p>
+                                        </td>
+                                    </tr>

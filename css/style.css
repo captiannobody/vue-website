@@ -1,0 +1,119 @@
+table, th, td {
+  /* border: 1px solid black; */
+  text-align: center;
+}
+.tablecss{
+  width: 850px;
+  height: 100%;
+}
+.center {
+    display:inline-block;
+    color: white;
+  }
+
+.custom{
+    margin: 10px;
+}
+/* button{
+    margin:20px;
+} */
+
+.spa{
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch baseline;
+    margin:15px;
+}
+
+.spa-item{
+    align-self:flex-end;
+}
+.detail{
+    margin:10px;
+}
+
+form {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  label,
+  input {
+    /* In order to define widths */
+    display: inline-block;
+  }
+  
+  label {
+    width: 30%;
+    /* Positions the label text beside the input */
+    text-align: right;
+  }
+  
+  label+input {
+    width: 50%;
+    /* Large margin-right to force the next element to the new-line
+             and margin-left to create a gutter between the label and input */
+    margin: 0 10% 0 5%;
+  }
+  
+  
+  /* Only the submit button is matched by this selector,
+         but to be sure you could use an id or class for that button */
+  
+  input+input {
+    float: right;
+  }
+
+.isubmit{
+    float: right;
+}
+
+.tables-container{
+  display: flex;
+  margin-left: 50px;
+}
+.detail{
+    justify-content: space-around; 
+}
+.td-container{
+  display: flex;
+}
+.td-items{
+  justify-content: space-between;
+}
+
+td, th {
+  padding: 5px;
+}
+
+th {
+  cursor:pointer;
+}
+* {
+  box-sizing: border-box;
+}
+.modTable{
+  width: 300px;
+  height:100%
+}
+.modTable_th{
+  height: 55px;
+}
+.delButton{
+  /* margin-left: 10px; */
+  float: right;
+}
+.editButton{
+  float: left;
+}
+.searchRowBorder{
+  border-color: red;
+  height:10px;
+}
+.pagination{
+  margin-left: 30px;
+}
+.modify_tr{
+  height: 30px;
+  overflow: hidden;
+}
