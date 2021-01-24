@@ -21,7 +21,9 @@ let listView = {
         }
     },
     mounted(){
-        console.log('list mounted'),
+        let studentInfo  ={'id':0,'name':'Sreeram','joindate':'2019-01-01','amount':'4000','totalclasses':'16','currentClasses':'0'};
+        studentDB.setItem('details',JSON.stringify([studentInfo]));
+        console.log('INSIDE LISTJS MOUNTED'),
         console.log(this.studentHeader['name']);
         
         // studentDB.setItem('details',JSON.stringify([studentInfo]));
